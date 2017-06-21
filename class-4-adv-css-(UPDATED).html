@@ -1,0 +1,409 @@
+﻿<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Class 4 - Intro to HTML/CSS - Section 3</title>
+
+    <meta name="description" content="This is curriculum for the GDI RDU intro to web series. It was developed from the official Girl Develop It Core HTML/CSS curriculum">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor--><link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor<link rel="stylesheet" href="lib/css/dark.css"> -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img src="img/bzs-academy-logo-2015.png" alt="BZSA Logo" class="noborder">
+          <h1 style="margin: 0;">Intro to HTML/CSS</h1>
+          <h2>Section 3</h2>
+        </section>
+
+        <!-- Quiz 1-->
+        <section>
+          <h3>Quiz Part 1</h3>
+          <p>What are the three parts that make up The CSS Rule?</p>
+          <div class="fragment">
+<pre><img style="border: none; box-shadow: none; margin: 0 auto; display: block;" alt="The CSS Rule" src="img/cssrule.png"></pre>
+
+      </div>
+        </section>
+
+        <!-- Quiz 2-->
+        <section>
+          <h3>Quiz Part 2</h3>
+          <p class="fragment visible">How would you style a paragraph and a footer to have blue text?</p>
+          <div class="fragment">
+            <pre><code class="css">p, footer {
+  color: blue;
+}
+</code></pre>
+          </div>
+        </section>
+
+        <!-- Quiz 3-->
+        <section>
+          <h3>Quiz Part 3</h3>
+          <div class="fragment visible">What's wrong with this code?
+              <pre><code class="css">
+                my-class {
+                  font-color: red
+                }
+
+                my-class {
+                  size: 14pxs
+                }
+              </code></pre>
+          </div>
+          <div class="fragment">
+            <pre><code class="css">
+                .my-class {
+                  color: red;
+                  font-size: 14px;
+                }
+              </code></pre>
+          </div>
+        </section>
+
+        <!-- Box model-->
+        <section>
+          <h3>The Box Model</h3>
+          <img src="img/kitten-box.jpg" alt="Small box surrounded by packing peanuts in a larger box"/>
+
+        </section>
+        <section>
+          <h3>Box Model</h3>
+          <p>All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.</p>
+          <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
+        </section>
+        <section>
+          <img src="img/box-model.png" alt="Graphic illustrating box model" />
+
+        </section>
+        <!-- Padding -->
+        <section>
+          <h3>Padding</h3>
+          <p>Space between the border and the content</p>
+          <img src="img/box-model-padding.png" alt="Graphic illustrating box model, padding highlighted"/>
+        </section>
+
+        <section>
+          <h3>Padding</h3>
+          <p>Notice that the padding adds to the total width of the box.</p>
+          <img src="img/box-model-padding.png" alt="Graphic illustrating box model, padding highlighted"/>
+        </section>
+
+        <section>
+          <h3>Padding</h3>
+          <p>15 pixels on all sides</p>
+<pre><code class="css">padding: 15px;</code></pre>
+          <p>10 pixels on top only</p>
+<pre><code class="css">padding-top: 10px;</code></pre>
+          <p>10 on top, 5 on right, 3 on bottom, 5 on left</p>
+<pre><code class="css">padding: 10px 5px 3px 5px;</code></pre>
+        </section>
+
+        <section>
+          <h3>Padding</h3>
+          <p>Four values<p>
+<pre><code class="css">padding: top right bottom left;</code></pre>
+         <p>Three values</p>
+<pre><code class="css">padding: top right/left bottom;</code></pre>
+          <p>Two values</p>
+<pre><code class="css">padding: top/bottom right/left;</code></pre>
+          <p>One value</p>
+<pre><code class="css">padding: all;</code></pre>
+        </section>
+
+        <section>
+          <h3>Padding</h3>
+<pre><code class="css">padding: 10px 20px 30px 40px;</code></pre>
+          <img src="img/box-model-padding2.png" alt="Graphic illustrating box model, with uneven padding"/>
+        </section>
+
+        <section>
+            <h3>Enough Talk:  Let's Code!</h3>
+            <p>Try adding some padding to the div with the class that has your main content.</p>
+            <p>Remember: you can write out "padding-left", "padding-right", etc. or you can use shorthand declarations.</p>
+        </section>
+
+        <!-- Border-->
+        <section>
+          <h3>Border</h3>
+          <p>The edge around the box.</p>
+          <img src="img/box-model-border.png" alt="Graphic illustrating box model, border highlighted">
+        </section>
+
+        <section>
+          <h3>Border</h3>
+          <p>Borders are specified as "thickness, style, color."</p>
+          <p>A solid red border</p>
+<pre><code class="css">border: 1px solid #ff0000;</code></pre>
+          <p>A thick dotted black top border</p>
+<pre><code class="css">border-top: 4px dotted #000000;</code></pre>
+          <p>Two different border styles</p>
+<pre><code class="css">border-top: 1px solid #ff0000;
+border-bottom: 4px dotted #000000;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Border - Other Properties</h3>
+<pre><code class="css">border-width: 10px;
+border-style: dashed;
+border-color: #666666;
+</code></pre>
+          <p>You can specify each property separately, or all three together.</p>
+
+        </section>
+
+        <section>
+            <h3>Enough Talk:  Let's Code!</h3>
+            <p>Try adding a border to your &lt;header&gt; element as well as some padding.</p>
+            <p>Experiment with different border styles, thicknesses, and positions.</p>
+        </section>
+
+        <!-- Margin -->
+        <section>
+          <h3>Margin</h3>
+          <p>The transparent area around the box that separates it from other elements by creating whitespace. It can be used to horizontally center an element as well.</p>
+          <img src="img/box-model-margin.png" alt="Graphic illustrating box model, margin highlighted"/>
+        </section>
+
+        <section>
+          <h3>Margin</h3>
+          <p>15 pixels on all sides</p>
+<pre><code class="css">margin: 15px;</code></pre>
+          <p>10 on top, 5 on right, 3 on bottom, 5 on left</p>
+<pre><code class="css">margin: 10px 5px 3px 5px;</code></pre>
+          <p>10 pixels on top</p>
+<pre><code class="css">margin-top: 10px;</code></pre>
+        </section>
+
+        <section>
+          <h3>Auto Margin</h3>
+          <p>If a margin is set to auto on a box that has width, it will take up as much space as possible.</p>
+          <p>CENTERED</p>
+<pre><code class="css">margin: 0 auto;
+width: 200px;
+</code></pre>
+         <div style="width:200px;margin: 40px auto;background-color: teal;color: #fff;padding: 15px;"><p>This box will be centered.</p></div>
+        </section>
+
+
+
+        <section>
+          <h3>Wrappers</h3>
+          <p>Wrappers are a good way to center content if the screen width is wider than your content.</p>
+<pre><code class="css">.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</code></pre>
+        </section>
+
+       <section>
+            <h3>Enough Talk:  Let's Code!</h3>
+            <p>Try adding some margin to your &lt;footer&gt; element.</p>
+            <p>Notice how margin pushes the footer away from other content but the element stays the same size;</p>
+            <p>Then center your entire document in the browser by adding a wrapper class with auto margin, width and a max-width.</p>
+        </section>
+
+        <section>
+          <h3>Placing elements side by side</h3>
+          <p>If you want two block level elements to be side by side, you need to float both elements..</p>
+          <div style="border:5px solid black; padding:20px; width:720px; margin:0 auto;">
+            <div style="background-color: #688836; color: white; width:25%; height:160px; float:left;">
+              <p style="padding:15px;">
+                width: 25%;<br />
+                float: left;
+              </p>
+            </div>
+            <div style="background-color: #C3C3C3; width:75%; height:160px; float:left;">
+              <p style="padding:15px">
+                width: 75%;<br />
+                float: left;
+              </p>
+            </div>
+            <br style="clear:both" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Float</h3>
+          <ul>
+            <li>"Floating" an element takes it in the normal flow, as far to the left or right of it's containing element as possible.</li>
+            <li>Any other elements, such as paragraphs or lists, will wrap around the floated element.</li>
+            <li>Always specify a width when floating an element, otherwise the element is likely to take up the whole page and not appear floated.</li>
+            <li>You can specify a) whether an element is floated or not, and b) which side it floats on.</li>
+          </ul>
+        </section>
+      <section>
+        <img src="https://slack-imgs.com/?c=1&o1=wi245.he163&url=http%3A%2F%2Fmedia1.giphy.com%2Fmedia%2FF9hQLAVhWnL56%2Fgiphy.gif" style="float:left; height: 200px;" />
+        <p style="text-align: left">This is a long paragraph text that is next to an image that is floating to the left. This is an image of Baby Groot. Groot was a Flora colossus from Planet X, the capital of the branch worlds. The sapling that would come to be known as "Groot" came from an "Enobled Sap-line" and gifted in quasi-dimensional super-positional engineering...at least, according to Maximus the Mad. Groot did not get along with his fellow saplings, instead preferring the company of the "Maintenance Mammals" who the other saplings treated with prejudice. After Groot killed another sapling to defend a maintenance mammal it was brutalising, as well as releasing a human subject that was kidnapped for scientific purposes, he was exiled of the planet by the "Arbor Masters". With no place to go, Groot set to explore other galaxies.</p>
+      </section>
+
+        <section>
+          <h3>Clear</h3>
+          <ul>
+            <li>Clearing tells the element on which side (right, left, both) other elements <strong>cannot</strong> appear. </li>
+            <li>If you had an image floated left, and you did not want the paragraph to appear next to it, you would add <strong>clear: left;</strong> to the paragraph.</li>
+            <li>Clearing both sides makes sure floats don’t flow past the clear element.</li>
+          </ul>
+<pre><code class="css">clear: right;
+clear: left;
+clear: both;
+</code></pre>
+        </section>
+
+      <section>
+        <h3>Clearfix</h3>
+        <p>A clearfix is applied to pseudo-class :after of a div that contains two elements that are floating next to each other.</p>
+        <p>It's generally used in float layouts where elements are floated to be stacked horizontally.</p>
+      </section>
+      <section>
+        <h3>Clearfix CSS</h3>
+       <pre><code>.wrapper:after {
+    content: '';
+    display: table;
+    clear:  both;
+}</code></pre>
+        <p>Be sure to apply this to the div that is containing your two elements that are floating next to each other.</p>
+
+      </section>
+      <section>
+        <h3>Enough Talk, Lets Code!</h3>
+        <p>Add a clearfix to your wrapper div or any other elements that you want to stop floating.</p>
+      </section>
+
+      <section>
+        <h3>Questions?</h3>
+        <img src="img/star-wars-question.jpg" />
+      </section>
+
+        <!-- Exercise -->
+        <!--<section>
+          <h3>Enough Talk: Let's Code!!</h3>
+          <p>Let's add some padding, borders, and margins to our divs.</p>
+          <p>Let's center our entire document in the browser.</p>
+        </section>-->
+
+        <!-- Sizing -->
+        <!-- Width-->
+        <!--<section>
+          <h3>Property: Width</h3>
+          <p>Sets the width of an element.</p>
+          <p>Does not include padding or borders. Remember to add these to the width.</p>
+<pre><code class="css">#sidebar{
+  width: 31%;
+  padding: 1%;
+  border: none; /* Total width is 33% */
+}
+</code></pre>
+        </section> -->
+
+        <!-- height-->
+       <!-- <section>
+          <h3>Property: Height</h3>
+          <p>Sets the height of an element.</p>
+          <p>Does not include padding or borders. Remember to add these to the height.</p>
+<pre><code class="css">p.alert{
+  height: 50px;
+  padding: 5px;
+  border: 2px solid red; /* What is the total height of the element? */
+}
+</code></pre>
+        </section> --->
+
+        <!-- Exercise -->
+        <!--<section>
+          <h3>Enough Talk: Let's Code!!</h3>
+          <div>
+            <p>Add a width &amp; height to an element.</p>
+            <p>Use IDs or classes to target each element with CSS</p>
+          </div>
+        </section>
+
+        <section>
+         <h1>Questions?</h1>
+          <img src="img/Monkey_Has_A_Question.jpg" alt="">
+        </section> --->
+</div><!-- Close slides -->
+
+    <div>
+      <footer>
+        <!--<div class="copyright">
+          HTML/CSS ~ Girl Develop It
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>-->
+      </footer>
+    </div>
+</div><!-- Closes Reveal -->
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

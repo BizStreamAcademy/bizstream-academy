@@ -1,0 +1,520 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Class 3 - Intor to CSS</title>
+
+    <meta name="description" content="This is curriculum for the GDI RDU intro to web series. It was developed from the official Girl Develop It Core HTML/CSS curriculum">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor-->
+    <link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor<link rel="stylesheet" href="lib/css/dark.css"> -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <img src="img/bzs-academy-logo-2015.png" alt="BZSA Logo" class="noborder">
+                <h1 style="margin: 0;">Intro to CSS</h1>
+            </section>
+
+
+
+            <!-- Review: Role of HTML v. CSS-->
+            <section>
+                <h3>Let's Review</h3>
+                <img src="img/elephants.jpg" alt="Two elephants interacting" />
+                <p><small>Photo credit:  <a href="http://www.flickr.com/photos/ginable/325235488/">Ginable</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a></small></p>
+            </section>
+
+            <section>
+                <h3>Anatomy of a website</h3>
+                <p><strong>Your Content</strong>
+                    <br />
+                    <strong>+ HTML</strong>: Structure
+                    <br />
+                    <strong>+ CSS</strong>: Presentation
+                    <br />
+                    <strong>= Your Website</strong></p>
+                <p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
+            </section>
+
+            <!-- IDs and Classes-->
+            <section>
+                <h3>Reusing code</h3>
+                <p>As a general coding principle, <strong>D</strong>on't <strong>R</strong>epeat <strong>Y</strong>ourself (<strong>DRY</strong>).
+                    <p>To reuse CSS, we use IDs and classes.</p>
+                    <img src="img/keep-calm-and-don-t-repeat-yourself.png" alt="Don't Repeat Yourself" />
+            </section>
+            <section>
+                <h3>IDs vs. Classes</h3>
+                <p><strong>ID</strong> -- Should only apply to one element on a webpage, i.e., a webpage only has one footer.
+                    <br /> The "#" is how you tell CSS "this is an id."</p>
+                <p><strong>Class</strong> -- Lots of elements can have the same class, i.e., There can be many warnings on one webpage.
+                    <br /> The "." is how you tell CSS "this is a class name."</p>
+            </section>
+            <section>
+                <h3>Selector: ID</h3>
+                <pre><code class = "css">#footer {
+  property: value;
+}
+</code></pre>
+                <p>Selects all elements with an id of "footer".</p>
+
+                <pre><code class="html">&lt;p id="footer"&gt;Copyright 2016&lt;/p&gt;
+</code></pre>
+                <p>The associated HTML.</p>
+            </section>
+
+            <!-- Selectors Class-->
+            <section>
+                <h3>Selector: Class</h3>
+                <pre><code class = "css">.warning {
+  color: red;
+}
+</code></pre>
+                <p>Selects all elements with a class of "warning".</p>
+
+                <pre><code class = "html">&lt;p class="warning"&gt;It's a trap!&lt;/p&gt;
+</code></pre>
+                <p>The associated HTML.</p>
+            </section>
+
+            <!-- Exercise-->
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <ul>
+                    <li>Add an ID and/or class to the divs you have already created in your HTML.</li>
+                    <li>Add CSS rules to target these elements</li>
+                </ul>
+            </section>
+
+            <!-- Selector position-->
+            <section>
+                <h3>Selector: Position</h3>
+                <pre><code class = "css">p em {
+  color: yellow;
+}
+</code></pre>
+                <p>Selects all em elements that are within a paragraph</p>
+                <pre><code class = "html">&lt;p&gt;This is &lt;em&gt;important.&lt;/em&gt;&lt;/p&gt;
+</code></pre>
+                <p>The associated HTML.</p>
+            </section>
+            <section>
+                <h3>Selector: Position</h3>
+                <ul>
+                    <li>Position selectors are more specific</li>
+                    <li>They look for elements <em>inside</em> other elements</li>
+                    <li>We seperate nested elements with a space</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Selector: Position</h3>
+                <p>So this code:</p>
+                <pre><code class = "css">ul li a strong{
+  color: purple;
+}
+</code></pre>
+                <p>Means "find a strong tag inside a link inside a list item in an unordered list"</p>
+                <pre><code class = "html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href="programs.html"&gt;Our &lt;strong&gt;program&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            </section>
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <ul>
+                    <li>In your CSS file, try a position selector</li>
+                    <li>Remember, you need to look for an element <em>inside</em> another element</li>
+                </ul>
+            </section>
+
+            <!-- Cascading-->
+            <section>
+                <h3>Cascading</h3>
+                <p>Styles "cascade" down until changed</p>
+                <pre><code class = "css">p{
+  color:blue;
+  font-family: 'Helvetica';
+}
+.red {
+  color: red;
+}
+#special {
+  font-family: Arial;
+}
+</code></pre>
+                <pre><code class = "html">&lt;p&gt;Paragraph&lt;/p&gt;
+&lt;p class ="red"&gt;Paragraph&lt;/p&gt;
+&lt;p class = "red" id ="special"&gt;Paragraph&lt;/p&gt;
+</code></pre>
+            </section>
+
+            <section>
+                <h3>Cascading priority</h3>
+                <p>Your browser also assigns priority based on the specificity of the selection. More specific selectors have higher priority.</p>
+                <pre><code class = "css">.main .sale .clearance p{ //Most specific
+  color: red;
+}
+.header .title p{
+  color: green;
+}
+.footer p{ //Least specific
+  color: blue;
+}
+</code></pre>
+            </section>
+            <section>
+                <h3>Cascading priority</h3>
+                <p>The tie-breaker is position. Rules lower in the file overwrite rules higher in the file</p>
+                <pre><code class = "css">a{
+  background-color: yellow;
+}
+a{
+  background-color: teal;
+}
+a{ //This rule wins
+  background-color: black;
+}
+</code></pre>
+            </section>
+
+
+            <section>
+                <h3>Comma Separated Selectors</h3>
+                <p>CSS also allows you to specify a set of styles to multiple selectors at once.</p>
+                <pre><code class = "css">#content p, footer .container p {
+    color: blue;
+    background: #333;
+}
+
+p, .list li, a {
+    color: red;
+}
+</code></pre>
+<p>
+    You can have as many comma separated selectors as you want. Each CSS element is separated by a space and a comma.
+</p>
+            </section>
+
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <p>
+                    Add some comma separated CSS to your site to apply styles to multiple selectors.
+                </p>
+            </section>
+
+
+            <section>
+                <h3>Inline Vs. Block in HTML/CSS</h3>
+                <p>
+                    Every HTML element has a default 'display' type. For most, they will either be 'inline' or 'block'.<br /><br />
+                </p>
+                <p>
+                    <b>Block: </b>a block element will take up the full width of available space and will stay on its own line.<br /><br />
+                </p>
+                <p>
+                    <b>Inline: </b>an inline element will only take up as much space as the content it has and it will not start on a new line.
+                </p>
+            </section>
+
+            <section>
+                <h3>Inline Vs. Block Examples</h3>
+                <p>
+                    <b>Block: </b>div, h1, p<br /><br />
+                </p>
+                <p>
+                    <b>Inline: </b>img, span, a
+                </p>
+                <p>
+                    Inspect elements below to see how they act in HTML:
+                </p>
+                <div>
+                    <h4>This is a heading</h4>
+                    <p>
+                        This is a paragraph
+                    </p>
+                </div>
+                <div>
+                    <img style="margin:0;width:150px;" src="img/example-absolute.png" alt="cat" />
+                    <span>test span tag</span>
+                    <a href="#">test link here</a>
+                </div>
+            </section>
+
+            <section>
+                <h3>Inline Vs. Block Force them to change</h3>
+                <p>
+                    Using CSS, we can change the default value for the 'display' of an HTML element. So if we wanted the default display of inline to change for an
+                    img tag, we could use this css:
+                </p>
+                <pre><code class = "css">img {
+    display: block;
+}
+</code></pre>
+<p>
+    This will cause the img tag to sit on it's own line and take up as much space as it can.
+</p>
+            </section>
+
+            <section>
+                <h3>Adding a span tag</h3>
+                <p>
+                    Span tags are primarily used within headings or paragraphs to manipulate certain sections of text.
+                </p>
+                <pre><code style="color:black !important;">
+&lt;p&gt;This is normal text &lt;span class="highlight"&gt;but this is specially colored &lt;/span&gt; but now it's normal text again. &lt;/p&gt;
+</code></pre>
+<p>
+    CSS to go with that HTML:
+</p>
+<pre><code>.highlight {
+    color: red;
+}
+</code></pre>
+            </section>
+
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <p>
+                    Add a span tag with a class on it inside one of your headings or paragraphs. Then style it with CSS.
+                </p>
+            </section>
+
+            <section>
+                <h3>Rounded Corners</h3>
+                <p>
+                    You can apply rounded corners to any HTML element by using the CSS property: border-radius. The higher the border radius number
+                    the more rounded the corner is.
+                </p>
+                <img src="img/border-radius.jpg" alt="rounded corners" />
+                <p>
+                    A border radius is primarily added if your HTML element has a background color, border, or shadow to it. Otherwise you won't be able
+                    to see the rounded corners.
+                </p>
+            </section>
+
+            <section>
+                <h3>Rounded Corners Example</h3>
+                <p>
+                    The first example rounds the corners of every side by 10px.
+                </p>
+                <p>
+                    The second example (class circle) creates a circle because the border-radius is half of the width and height.
+                </p>
+<pre><code class = "css">img {
+    border-radius: 10px;
+}
+
+.circle {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.box {
+    border-radius: 5px 10px 20px 5px;
+}
+</code></pre>
+                <p>
+                    The last example above shows how you can apply different border-radius amounts to different corners of the box.
+                </p>
+            </section>
+
+            <section>
+                <h3>Pseudo Classes</h3>
+                <p>
+                    Pseudo classes are used to target specific HTML elements based on a change in state, location compared to other HTML elements, and attributes.<br /><br />
+                    You can target these 'states' by adding a colon (:) after a CSS selector and then the state of the HTML element you want to target.
+                </p>
+                <p>
+                    <br />Here are some examples
+                </p>
+                <ul>
+                    <li>p:hover</li>
+                    <li>p:focus</li>
+                    <li>p:active</li>
+                    <li>p:first-child</li>
+                    <li>p:last-child</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Pseudo Classes Example</h3>
+                <p>
+                    In the examples below, p:hover would be used if you wanted to change the CSS for paragraphs when someone hovers over them with their mouse.
+                </p>
+<pre><code>p:hover {
+    color: red;
+}
+
+a:hover {
+    color: blue;
+}
+</code></pre>
+                <p>
+                    A more common example is the second example above for the link element. It's good practice to give your links a defined hover state.
+                </p>
+            </section>
+
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <p>
+                    Using the ":hover" pseudo class, add a hover state to one of your html elements
+                </p>
+            </section>
+
+            <section>
+                <h3>Pseudo Elements</h3>
+                <p>
+                    On the other hand, pseudo elements allow you to insert content into your site through CSS using <b>:before</b> and <b>:after</b>.
+                </p>
+                <p style="margin-top:30px;">
+                    The <b>:before</b> pseudo inserts content before the HTML's content and the <b>:after</b> inserts content after the HTML's content.
+                </p>
+            </section>
+
+            <section>
+                <h3>Pseudo Elements Example</h3>
+                <p>
+                    When writing the CSS for this, we always need to include the 'content' property. The property value can have text, an icon, or
+                    an image, but not HTML. After you have specified the content, you can apply any other styles that you want.
+                </p>
+<pre><code>p:before {
+    content: 'this is added text';
+    color: white;
+    font-size: 30px;
+    background: blue;
+}
+
+p:after {
+    content: url(images/testimage.png);
+}
+</code></pre>
+                <p>
+                    When adding text/icon content, you have to wrap the text in quotes.
+                </p>
+            </section>
+
+            <section>
+                <h3>Enough Talk: Let's Code!</h3>
+                <p>
+                    Using the ":before" or ":after" pseudo element, add additonal text to your site through CSS.
+                </p>
+            </section>
+
+            <section>
+               <h1>Questions?</h1>
+                <img src="img/mustache_question.jpg" alt="">
+            </section>
+        </div>
+        <!-- Close slides -->
+
+        <div>
+            <footer>
+                <!--<div class="copyright">
+          HTML/CSS ~ Girl Develop It
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>-->
+            </footer>
+        </div>
+    </div>
+    <!-- Closes Reveal -->
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                condition: function() {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+                async: true,
+                condition: function() {
+                    return !!document.body.classList;
+                }
+            }]
+        });
+
+    </script>
+
+</body>
+
+</html>
